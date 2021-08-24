@@ -1,0 +1,20 @@
+.WrapContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.day {
+  background-image: url("https://images.unsplash.com/photo-1605371893234-db5e7b01aad2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c3VubnklMjB3ZWF0aGVyfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=60");
+}
+
+.night {
+  background-image: url("https://images.unsplash.com/photo-1483382041574-84a17c543ad4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fG5pZ2h0fGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=60");
+}
