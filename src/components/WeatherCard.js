@@ -120,10 +120,11 @@ export default function WeatherCard({
         {/* Min: {Math.floor(temp_min)} &#8451;/Max: {Math.ceil(temp_max)} &#8451; */}
 
         <TempImgContainer>
-          <div>
-            {Math.round(Math.min.apply(null, minValueList))}&#8451; -{" "}
-            {Math.round(Math.max.apply(null, maxValueList))}&#8451;
-          </div>
+          <Temperatures>
+            <p>Min: {Math.round(Math.min.apply(null, minValueList))}&#8451;</p>
+            <p>Max: {Math.round(Math.max.apply(null, maxValueList))}&#8451;</p>
+          </Temperatures>
+
           <ImageContainer>
             <img
               src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
@@ -152,7 +153,7 @@ export default function WeatherCard({
             <InfoPart>
               <RiTempHotFill size="1.5em" />
               <Info>
-                <p>{feels_like}&#8451;</p>
+                <p>{Math.round(feels_like)}&#8451;</p>
                 <p> Feels like</p>
               </Info>
             </InfoPart>
@@ -189,6 +190,12 @@ export default function WeatherCard({
     </AllCard>
   );
 }
+
+const Temperatures = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+`;
 
 const AllCard = styled.div`
   :hover {

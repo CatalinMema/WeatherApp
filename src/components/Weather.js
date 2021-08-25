@@ -17,7 +17,7 @@ function Weather() {
     setLong(position.coords.longitude);
   }
   getLocation();
-
+  console.log(lati);
   useEffect(() => {
     const getData = async () => {
       //   const res = await axios.get("https://api.openweathermap.org/data/2.5/forecast?q=Timisoara&cnt=5&appid=e445f0e5f9af8f1cab20cecf9b955c63")
@@ -52,10 +52,15 @@ function Weather() {
     );
   });
   const hour = new Date().getHours();
+
   return (
     <div
       className={
-        hour < 19 && hour < 7 ? "WrapContainer night" : "WrapContainer day"
+        hour >= 19
+          ? "WrapContainer night"
+          : hour < 7
+          ? "WrapContainer night"
+          : "WrapContainer day"
       }
     >
       <Forecast> {fiveDayForecast}</Forecast>
